@@ -1,0 +1,29 @@
+spring:
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:db;Mode=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+  flyway:
+    locations: classpath:db/migration, classpath:db/data
+
+currency:
+  api-key: "8a77e4eece4941a399336c741bc7cbf4"
+  url: "https://api.twelvedata.com/time_series"
+
+
+server:
+  port: 8081

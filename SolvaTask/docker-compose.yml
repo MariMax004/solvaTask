@@ -1,0 +1,12 @@
+version: "3"
+services:
+  postgres-service-db:
+    image: postgres:latest
+    container_name: postgres-service
+    environment:
+      - POSTGRES_DB=service
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=pgpass
+    command: postgres -p 54321
+    ports:
+      - 54321:54321
